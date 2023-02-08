@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
+    "@stomp/stompjs": "^6.1.2",
+    "axios": "^1.3.2",
     "core-js": "^3.8.3",
     "pinia": "^2.0.23",
     "roboto-fontface": "*",
+    "sockjs-client": "^1.6.1",
     "vue": "^3.2.13",
     "vue-router": "^4.0.0",
     "vuetify": "^3.0.0",
