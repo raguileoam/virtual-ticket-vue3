@@ -1,18 +1,28 @@
 <template>
   <v-container>
     <v-row>
-      <v-col md="3">
-        <h3>{{content}}</h3>
+      <v-col cols="12" sm="2">
+        <v-sheet rounded="lg" min-height="268">
+          <!--  -->
+        </v-sheet>
       </v-col>
 
-      <v-col md="9">
-        <TicketBranchCard />
+      <v-col cols="12" sm="8">
+        <v-sheet min-height="70vh" rounded="lg">
+          <TicketCard />
+        </v-sheet>
+      </v-col>
+
+      <v-col cols="12" sm="2">
+        <v-sheet rounded="lg" min-height="268">
+          <!--  -->
+        </v-sheet>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script setup>
-import TicketBranchCard from "@/components/TicketBranchCard.vue";
-let content = ""
+import TicketCard from "@/components/TicketCard.vue";
+
 </script>
