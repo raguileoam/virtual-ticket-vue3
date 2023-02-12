@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-//import { useSocket } from "./Socket.js";
+//import { useSocket } from "../composables/Socket.js";
 import LoadingBar from "@/components/LoadingBar.vue";
 import messages from "@/mocks/socket.json"
 

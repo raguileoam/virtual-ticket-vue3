@@ -4,16 +4,6 @@ import { ref, onMounted, onUnmounted } from "vue";
 
 const url = "http://localhost:8080/data-info";
 
-const callback = function (message) {
-  if (message.body) {
-    console.log("got message with body " + message.body);
-    return message.body;
-  } else {
-    console.log("got empty message");
-    return "";
-  }
-};
-
 export function useSocket() {
   const client = ref(null);
   const messages = ref([]);
@@ -29,7 +19,7 @@ export function useSocket() {
       webSocketFactory: () => (new SockJS(url))
     });
 
-    client.value.onConnect = function (frame) {
+    client.value.onConnect = function () {
       client.value.subscribe("/info/values", (message) => {
         messages.value.push(JSON.parse(message.body));
       });
@@ -51,4 +41,4 @@ export function useSocket() {
   });
 
   return { messages, client }
-};
+}
