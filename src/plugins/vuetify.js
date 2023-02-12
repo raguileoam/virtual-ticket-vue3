@@ -23,4 +23,7 @@ export default createVuetify({
       },
     },
   },
+  display: {
+    mobileBreakpoint: 'sm',
+  },
 })
