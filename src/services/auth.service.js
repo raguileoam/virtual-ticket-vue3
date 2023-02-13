@@ -22,7 +22,7 @@ class AuthService {
           return null;
         },
         (error) => {
-          if (error.response.status === 401) {
+          if (error.response?.status === 401) {
             this.logout();
             return Promise.reject(error.response.data.mensaje);
           }

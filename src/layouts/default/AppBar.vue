@@ -7,7 +7,7 @@
     <v-spacer></v-spacer>
 
     <div class="d-none d-sm-flex">
-      <v-btn v-for="url in loggedInUrls" :key="url.value">{{ url.title }}</v-btn>
+      <v-btn v-for="url in loggedInUrls" :key="url.value" :href="url.value">{{ url.title }}</v-btn>
     </div>
   </v-app-bar>
 
