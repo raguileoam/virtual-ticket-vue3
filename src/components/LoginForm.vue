@@ -56,7 +56,6 @@ export default {
                 this.$router.push("/");
             } catch (error) {
                 this.loadingLogin = false;
-                console.log(error)
                 this.errorMessage = error;
             }
         },
