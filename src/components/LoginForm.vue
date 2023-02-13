@@ -12,9 +12,10 @@
                         <v-text-field prepend-icon="mdi-email" validate-on-blur clearable dense outlined
                             v-model="user.email" :rules="[formRules.emailPattern]" label="Ingrese su e-mail"
                             type="email" required />
-                        <v-text-field :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                            :rules="[formRules.passwordRequired, formRules.min]" :type="show1 ? 'text' : 'password'"
-                            counter @click:append="show1 = !show1" prepend-icon="mdi-lock" dense outlined
+                        <v-text-field :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                            :rules="[formRules.passwordRequired, formRules.min]"
+                            :type="showPassword ? 'text' : 'password'" counter
+                            @click:append="showPassword = !showPassword" prepend-icon="mdi-lock" dense outlined
                             v-model="user.password" label="Ingrese su contraseña" required />
                         <div class="d-flex justify-center">
                             <v-btn dark color="secondary" depressed :disabled="loadingLogin" :loading="loadingLogin"
@@ -78,7 +79,7 @@ export default {
         loadingLogin: false,
         errorMessage: "",
         newPassword: null,
-        show1: false,
+        showPassword: false,
         isValidForm: false,
         formRules: formRules,
     }),
