@@ -1,24 +1,44 @@
 
 <template>
-  <div>
-    <div v-if="messages">
-      <div v-for="message in messages[0]" v-bind:key="message">
-        Último ticket en fila: {{ message.lastTicketInProcess }}
-        Último ticket en atención: {{ message.lastTicketInAttention }}
-      </div>
-    </div>
+  <v-card class="d-flex flex-column align-center" variant="text">
+    <v-card-text v-if="props.ticket" class="display-3 mb-5">
+      <p class="ticket-label text-h2 d-flex justify-center mb-6">Tu número</p>
+      <p class="ticket-number text-h1 d-flex justify-center mb-6">{{ props.ticket }}</p>
+    </v-card-text>
 
-    <div v-else>
+    <v-card-text v-else>
       <LoadingBar />
-    </div>
-  </div>
+    </v-card-text>
+
+    <v-card-actions>
+      <v-btn color="blue" @click="getTicketNumber" variant="flat">Obtener número de ticket</v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script setup>
-//import { useSocket } from "../composables/Socket.js";
-import LoadingBar from "@/components/LoadingBar.vue";
-import messages from "@/mocks/socket.json"
+import LoadingBar from './LoadingBar.vue';
 
-//const { messages } = useSocket();
+const emit = defineEmits(["onSubmitTicket"]);
+const props = defineProps({
+  ticket: {
+    type: String,
+    default: "A12"
+  }
+})
 
+const getTicketNumber = () => {
+  emit("onSubmitTicket")
+}
 </script>
+
+<style scoped>
+p {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.ticket-number {
+  color: blue;
+}
+</style>
