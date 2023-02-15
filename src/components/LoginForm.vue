@@ -10,15 +10,14 @@
                 <v-card-text>
                     <v-form v-model="isValidForm" ref="form" lazy-validation class="pa-4">
                         <v-text-field prepend-icon="mdi-email" validate-on-blur clearable dense outlined
-                            v-model="user.email" :rules="[formRules.emailPattern]" label="Ingrese su e-mail"
-                            type="email" required />
+                            v-model="user.email" :rules="[formRules.emailPattern]" label="Ingrese su e-mail" type="email"
+                            required />
                         <v-text-field :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-                            :rules="[formRules.passwordRequired, formRules.min]"
-                            :type="showPassword ? 'text' : 'password'" counter
-                            @click:append="showPassword = !showPassword" prepend-icon="mdi-lock" dense outlined
+                            :rules="[formRules.passwordRequired, formRules.min]" :type="showPassword ? 'text' : 'password'"
+                            counter @click:append="showPassword = !showPassword" prepend-icon="mdi-lock" dense outlined
                             v-model="user.password" label="Ingrese su contraseña" required />
                         <div class="d-flex justify-center">
-                            <v-btn dark color="secondary" depressed :disabled="loadingLogin" :loading="loadingLogin"
+                            <v-btn dark color="primary" depressed :disabled="loadingLogin" :loading="loadingLogin"
                                 @click="handleLogin">Entrar</v-btn>
                         </div>
                     </v-form>
@@ -26,7 +25,7 @@
                 </v-card-text>
             </v-card>
         </v-col>
-    </v-row>
+</v-row>
 </template>
 
 <script>
