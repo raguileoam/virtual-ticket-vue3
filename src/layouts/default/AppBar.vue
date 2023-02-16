@@ -17,14 +17,17 @@
         <v-list-item-title>{{ url.title }}</v-list-item-title>
       </v-list-item>
     </v-list>
-  </v-navigation-drawer>
+</v-navigation-drawer>
 </template>
 
 <script setup>
 import { ref, reactive, computed } from "vue";
 import { useDisplay } from "vuetify/lib/framework.mjs";
+import { useAuthStore } from "@/stores/auth";
+
+const auth = useAuthStore();
 const drawer = ref(false);
-const loggedIn = ref(false);
+const loggedIn = computed(() => auth.status.loggedIn);
 const urls = reactive([
   {
     title: 'Mis tickets',
