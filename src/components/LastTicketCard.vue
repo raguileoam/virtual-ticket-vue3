@@ -9,7 +9,7 @@
     <v-card-text v-else>
       <LoadingBar />
     </v-card-text>
-  </v-card>
+</v-card>
 </template>
 
 <script setup>
@@ -21,7 +21,7 @@ const props = defineProps({
 })
 </script>
 
-<style>
+<style scoped>
 .ticket-number {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
