@@ -4,7 +4,7 @@ import AuthService from "../services/auth.service";
 const user = JSON.parse(localStorage.getItem("token"));
 const initialState = user
   ? { status: { loggedIn: true }, user }
-  : { status: {}, user: null };
+  : { status: { loggedIn: false }, user: null };
 
 export const useAuthStore = defineStore("token", {
   state: () => {
