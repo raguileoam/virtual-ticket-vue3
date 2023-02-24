@@ -15,11 +15,11 @@
     <v-card-text class="display-3 mb-2">
       <p class="d-flex justify-center pa-2">No tienes un número pedido actualmente</p>
     </v-card-text>
-    <v-img width="280" src="@/assets/Ticket Queue Icon.png"></v-img>
+    <v-img width="280" src="@/assets/TicketQueueIcon.png"></v-img>
     <v-card-actions>
       <v-btn color="primary" @click="getTicketNumber" variant="flat">Obtener número de ticket</v-btn>
     </v-card-actions>
-</v-card>
+  </v-card>
 </template>
 
 <script setup>
